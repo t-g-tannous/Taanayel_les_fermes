@@ -1,0 +1,54 @@
+<html>
+<head>
+<script src="jquery.min.js"> </script>
+</head>
+<script>
+
+        
+$(document).ready(function() {
+
+});
+
+function callWsTemp()
+{
+var siteName=document.getElementById('siteName').value;
+
+var urlVal="http://ttapc.com:8085/Taanayel_lesfermes/taanayelTemperature/taanayelTempService/"+siteName;
+
+    $.ajax({
+	    url: urlVal
+    }).then(function(data) 
+	{
+		$.each(data, function(i, item) 
+		{
+		  $('.siteName-id').append(': '+item.siteName);
+		  $('.tempMOndayId').append(': '+item.MondayTemperature);
+		  $('.tempTuesdayId').append(': '+item.TuesdayTemperature);
+		  $('.tempWedenesdayId').append(': '+item.WedenesdayTemperature);
+		  $('.tempThursdayId').append(': '+item.ThursdayTemperature);
+		  $('.tempFridayId').append(': '+item.FridayTemperature);
+		  $('.tempSaturdayId').append(': '+item.SaturdayTemperature);
+		   $('.tempSundayId').append(': '+item.SundayTemperature);
+       });
+	});
+}
+
+
+</script>
+
+<input type ="text" id="siteName"/>
+<input type="button" onclick="callWsTemp()" value="Verify Temperature"/>
+
+<body>
+        <div>
+            <p class="siteName-id">The Site Name </p>
+            <p class="tempMOndayId">The Temperature for Monday was </p>
+			 <p class="tempTuesdayId">The Temperature for Tuesday </p>
+			  <p class="tempWedenesdayId">The Temperature for Wedenesday was </p>
+			   <p class="tempThursdayId">The Temperature for Thursday was </p>
+			    <p class="tempFridayId">The Temperature for Friday was </p>
+				 <p class="tempSaturdayId">The Temperature for Saturday was </p>
+				  <p class="tempSundayId">The Temperature for Sunday was </p>
+        </div>
+    </body>
+</html>
