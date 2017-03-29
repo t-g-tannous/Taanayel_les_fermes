@@ -1,3 +1,4 @@
-1- import the project name :Taanayel_lesfermes
-2- deploy the application to the server.
-3-modifty the server url in the page GetTemperature.html inside the folder Client Demo to be able to test the REST WS application
+1-  Suivre les etapes dans le wiki pour faire la configuration
+2- faire l'import du project :Taanayel_lesfermes
+3- deployer l'application sous votre application serveur (exemple tomcat).
+4- modifier le lien du serveur dans la page GetTemperature.html a l'interieur du dossier Client Demo pour pouvoir faire le test du REST WS application
